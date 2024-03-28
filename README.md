@@ -9,3 +9,7 @@ A remake to the original Brain Wrestling MK2 by The Last Banana
 
 ## Installation
 - Extract the folder and drop it in  `Mods/`
+
+## NOTICE
+- Mod doesn't have perfect UI Placements, manual Resolution support will be required (aka, I would have to add in your resolution)
+- Mod should support 720P, 540P (Upscales)
