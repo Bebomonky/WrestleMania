@@ -1,0 +1,21 @@
+{
+ GameOptions = {
+  Items = {
+   Base = {
+   },
+   DLC = {
+   },
+  },
+  RegenHP = true,
+  PlayerRespawnTime = 0,
+  LivesDisabled = false,
+  PlayerHealth = 0,
+  MatchTime = 0,
+  CrateRespawnTime = 2,
+  PlayerLives = 0,
+ },
+ Options = {
+  CheerVolume = 1,
+  AnnouncerVolume = 1,
+ },
+}
