@@ -172,7 +172,7 @@ function WrestleMania:CoreCreate_Idle()
 	if self.Map.Script then
 		self.LevelScript = self.Map.Script
 		self.CurrentLevel = self:LoadModule(self.LevelScript:gsub( "%.lua$", ""), true)
-		self.CurrentLevel:ScriptData(self)
+		self.CurrentLevel:StartScript(self)
 		print("Runnng Data Script for Scene: " .. self.Map.SceneName)
 	else
 		error("No Script found for Scene: " .. self.Map.SceneName .. " is it invalid?")
@@ -274,7 +274,7 @@ function WrestleMania:RestartViewer()
 
 	--Since modules automatically reload, we can update stuff on the fly!
 	self.CurrentLevel = self:LoadModule(self.LevelScript:gsub( "%.lua$", ""), true)
-	self.CurrentLevel:ScriptData(self)
+	self.CurrentLevel:StartScript(self)
 
 	for player = Activity.PLAYER_1, Activity.MAXPLAYERCOUNT - 1 do
 		if self:PlayerActive(player) and self:PlayerHuman(player) then

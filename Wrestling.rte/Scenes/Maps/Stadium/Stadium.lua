@@ -9,11 +9,9 @@ function stadium:Create()
 end
 
 function stadium:StartScript(activity)
-	self:ScriptData(activity)
-end
+	self.Activity = activity
 
-function stadium:ScriptData(activity)
-	activity:SetSpawn(Vector(225, 417), 55)
+	self.Activity:SetSpawn(Vector(225, 417), 55)
 
 	local npcs = {
 		{actor = "Coalition.rte/Soldier Light", 		Pos = Vector(13, 262), 	HFlipped = false},
@@ -31,13 +29,13 @@ function stadium:ScriptData(activity)
 	}
 
 	for k, list in pairs(npcs) do
-		activity:SpawnSpectator(list.actor, list.Pos, list.HFlipped)
+		self.Activity:SpawnSpectator(list.actor, list.Pos, list.HFlipped)
 	end
 
-	activity:SetCrate("Wrestling.rte/Wooden Crate", {50, 100, 150, 200, 250, 300, 350, 400, 500, 550, 600})
+	self.Activity:SetCrate("Wrestling.rte/Wooden Crate", {50, 100, 150, 200, 250, 300, 350, 400, 500, 550, 600})
 end
 
-function stadium:UpdateScript(activity)
+function stadium:UpdateScript()
 end
 
 return stadium:Create()

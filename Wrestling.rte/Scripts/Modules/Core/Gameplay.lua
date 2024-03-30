@@ -222,7 +222,7 @@ function WrestleMania:CoreUpdate()
 			end
 
 			if (self.CurrentLevel and self.CurrentLevel.InitSetup) then
-				self.CurrentLevel:InitSetup(self)
+				self.CurrentLevel:InitSetup()
 			end
 		else
 			--Mark that it's setup and that we shouldn't run this again after it's done.
@@ -312,12 +312,12 @@ function WrestleMania:CoreUpdate()
 	end
 
 	if (self.CurrentLevel and self.CurrentLevel.ActiveGame) then
-		self.CurrentLevel:ActiveGame(self)
+		self.CurrentLevel:ActiveGame()
 	end
 
 	self:UpdateGamemode()
 	if (self.CurrentLevel and self.CurrentLevel.UpdateScript) then
-		self.CurrentLevel:UpdateScript(self)
+		self.CurrentLevel:UpdateScript()
 	end
 
 	--TODO Make condition for infinite time
@@ -584,7 +584,7 @@ function WrestleMania:CoreEnd()
 		end
 	end
 	if (self.CurrentLevel and self.CurrentLevel.EndScript) then
-		self.CurrentLevel:EndScript(self)
+		self.CurrentLevel:EndScript()
 	end
 end
 function WrestleMania:CoreUpdate_End()
@@ -609,7 +609,7 @@ function WrestleMania:CoreUpdate_End()
 	end
 
 	if (self.CurrentLevel and self.CurrentLevel.UpdateEndScript) then
-		self.CurrentLevel:UpdateEndScript(self)
+		self.CurrentLevel:UpdateEndScript()
 	end
 
 	if self.GhostPlayer[0]:IsPlayerControlled() then
@@ -627,12 +627,12 @@ function WrestleMania:CoreVictory(player)
 		if player == -1 then
 			ExtensionMan.print_debug("NO WINNERS")
 			if (self.CurrentLevel and self.CurrentLevel.Draw) then
-				self.CurrentLevel:Draw(self)
+				self.CurrentLevel:Draw()
 			end
 			self.SFXTracks[10]:Play(self.CenterScene)
 		else
 			if (self.CurrentLevel and self.CurrentLevel.Victory) then
-				self.CurrentLevel:Victory(self)
+				self.CurrentLevel:Victory()
 			end
 			self.SFXTracks[8]:Play(self.CenterScene)
 			self.SFXTracks[11]:Play(self.CenterScene)
